@@ -38,6 +38,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "ant-design-vue": "^3.2.15",
+    "sortablejs": "^1.15.0",
     "vue": "^3.2.31"
   },
   "devDependencies": {

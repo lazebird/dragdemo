@@ -1,11 +1,11 @@
 <template>
   <pkgVue />
   <br />
-  <panelVue />
+  <sortableVue />
 </template>
 <script setup>
   import pkgVue from './views/pkg.vue';
-  import panelVue from './views/panel.vue';
+  import sortableVue from './views/sortable.vue';
 </script>
 <style>
   #app {

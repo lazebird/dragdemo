@@ -4,7 +4,10 @@ import { resolve } from 'path';
 import Components from 'unplugin-vue-components/vite';
 
 import visualizer from 'rollup-plugin-visualizer';
-const plugins = [];
+
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
+
+const plugins: any[] = [];
 if (process.env.REPORT === 'true') plugins.push(visualizer({ open: true, gzipSize: true, brotliSize: true }));
 
 function pathResolve(dir: string) {
@@ -35,7 +38,7 @@ export default defineConfig(({ command, mode }) => {
         { find: /#\//, replacement: pathResolve('types') + '/' },
       ],
     },
-    plugins: [vue(), Components({}), ...plugins],
+    plugins: [vue(), Components({ resolvers: [AntDesignVueResolver()] }), ...plugins],
     build: mode === 'demo' ? builddemo : buildlib,
     server: { host: true },
   };
