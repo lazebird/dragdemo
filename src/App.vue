@@ -1,10 +1,11 @@
 <template>
   <pkgVue />
   <br />
-  <h1>Hello World!</h1>
+  <panelVue />
 </template>
 <script setup>
   import pkgVue from './views/pkg.vue';
+  import panelVue from './views/panel.vue';
 </script>
 <style>
   #app {

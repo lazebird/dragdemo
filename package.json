@@ -1,25 +1,26 @@
 {
-  "name": "@lazebird/vue3template",
+  "name": "@lazebird/dragdemo",
   "version": "0.0.1",
   "keywords": [
     "vue3",
-    "vite"
+    "vite",
+    "sortablejs"
   ],
   "author": "lazebird",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lazebird/vue3template/issues"
+    "url": "https://github.com/lazebird/dragdemo/issues"
   },
-  "homepage": "https://github.com/lazebird/vue3template",
+  "homepage": "https://github.com/lazebird/dragdemo",
   "files": [
     "dist"
   ],
-  "main": "./dist/vue3template.umd.js",
-  "module": "./dist/vue3template.es.js",
+  "main": "./dist/dragdemo.umd.js",
+  "module": "./dist/dragdemo.es.js",
   "exports": {
     ".": {
-      "import": "./dist/vue3template.es.js",
-      "require": "./dist/vue3template.umd.js"
+      "import": "./dist/dragdemo.es.js",
+      "require": "./dist/dragdemo.umd.js"
     }
   },
   "private": false,
