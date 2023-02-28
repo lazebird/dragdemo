@@ -48,13 +48,14 @@
       if (id & 1) portData.value[0].push({ id });
       else portData.value[1].push({ id });
     }
-    for (let id = 1; id <= 12; id++) eleData.value.push({ id });
+    for (let id = 101; id <= 112; id++) eleData.value.push({ id });
   }
 
   function fixPlaceholder() {
     for (var i = 0; i < portData.value.length; i++) portData.value[i] = portData.value[i].filter((e) => e.id);
     portData.value = portData.value.filter((a) => a.length);
     portData.value.push([{ id: 0 }]);
+    console.log('[fixPlaceholder] portData ', unwrapref(portData.value));
   }
   function onMove(evt) {
     console.log('[move] evt ', evt);
@@ -62,8 +63,7 @@
       newLine = parseInt(evt.to.id);
     let oldIndex = evt.oldIndex,
       newIndex = evt.newIndex;
-    if (evt.to.id === 'trash') return;
-    console.log('[move] move %o from [%d][%d] to [%d][%d]', unwrapref(portData.value[newLine][newIndex]), oldLine, oldIndex, newLine, newIndex);
+    if (evt.to.id !== 'trash') console.log('[move] move %o from [%d][%d] to [%d][%d]', unwrapref(portData.value[newLine][newIndex]), oldLine, oldIndex, newLine, newIndex);
     fixPlaceholder(); // re-calc array
   }
   function onClone(evt) {
