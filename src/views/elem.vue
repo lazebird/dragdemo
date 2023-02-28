@@ -9,7 +9,7 @@
   defineProps({ data: { type: Object, required: true } });
   const emits = defineEmits(['dbclick']);
 
-  const toText = (info) => (info.id ? (info.row ? `P${info.id}` : `N${info.id}`) : '.placeholder');
+  const toText = (info) => (info.id ? (info.row !== undefined ? `P${info.id}` : `N${info.id}`) : '.placeholder');
   const onDbClick = (p) => emits('dbclick', p);
 </script>
 <style scoped>
