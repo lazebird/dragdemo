@@ -4,7 +4,8 @@ on:
     branches: [develop]
     paths: [package.json]
   workflow_dispatch:
-
+permissions:
+  contents: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -16,7 +17,7 @@ jobs:
         run: |
           npm install -g pnpm && pnpm install && pnpm run demo
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.2.3
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
           folder: dist
