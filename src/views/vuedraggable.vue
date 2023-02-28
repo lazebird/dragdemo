@@ -21,7 +21,7 @@
       </draggable>
 
       <draggable v-model="trashData" :group="{ name: 'trash', draggable: '.dropitem', put: true, pull: false }" class="dropzone trashzone" item-key="id" id="trash">
-        <template #item="{}"> </template>
+        <template #item="{ element: port }"> {{ port.id }}</template>
         <template #footer>Trash </template>
       </draggable>
     </a-col>
@@ -36,7 +36,7 @@
   const inputRef = ref();
   const portData = ref([]);
   const eleData = ref([]);
-  const trashData = [];
+  const trashData = ref([]);
 
   const info = ref({ visible: false });
 
@@ -64,6 +64,7 @@
     let oldIndex = evt.oldIndex,
       newIndex = evt.newIndex;
     if (evt.to.id !== 'trash') console.log('[move] move %o from [%d][%d] to [%d][%d]', unwrapref(portData.value[newLine][newIndex]), oldLine, oldIndex, newLine, newIndex);
+    else trashData.value = [];
     fixPlaceholder(); // re-calc array
   }
   function onClone(evt) {
