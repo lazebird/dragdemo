@@ -1,11 +1,11 @@
 <template>
   <pkgVue />
   <br />
-  <sortableVue />
+  <vuedraggableVue />
 </template>
 <script setup>
   import pkgVue from './views/pkg.vue';
-  import sortableVue from './views/sortable.vue';
+  import vuedraggableVue from './views/vuedraggable.vue';
 </script>
 <style>
   #app {

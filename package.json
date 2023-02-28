@@ -1,10 +1,10 @@
 {
   "name": "@lazebird/dragdemo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "vue3",
     "vite",
-    "sortablejs"
+    "vuedraggable"
   ],
   "author": "lazebird",
   "license": "MIT",
@@ -39,8 +39,8 @@
   },
   "dependencies": {
     "ant-design-vue": "^3.2.15",
-    "sortablejs": "^1.15.0",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
