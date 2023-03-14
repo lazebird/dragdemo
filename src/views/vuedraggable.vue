@@ -60,12 +60,13 @@
     let oldIndex = evt.oldIndex,
       newIndex = evt.newIndex;
     if (evt.to.id !== 'trash') console.log('[move] move %o from [%d][%d] to [%d][%d]', unwrapref(portData.value[newLine][newIndex]), oldLine, oldIndex, newLine, newIndex);
-    else trashData.value = [];
+    else trashData.value = []; // clear trash
     fixPlaceholder(); // re-calc array
   }
   function onClone(evt) {
     console.log('[clone] evt ', evt);
     if (evt.pullMode !== 'clone') return;
+    if (evt.to.id === 'trash') trashData.value = []; // clear trash
     fixPlaceholder(); // re-calc array
   }
 
