@@ -1,17 +1,13 @@
 <template>
   <a-row>
     <a-col :span="16">
-      <table>
-        <tbody v-if="portData && portData.length">
-          <tr v-for="(line, rindex) in portData" :key="rindex">
-            <draggable v-model="portData[rindex]" :group="{ name: 'panel', pull: true, put: true }" @end="onMove" item-key="id" :id="rindex" class="row">
-              <template #item="{ element: port }">
-                <td> <elem :data="{ id: port.id, row: rindex }" @dbclick="onDbClick" /> </td>
-              </template>
-            </draggable>
-          </tr>
-        </tbody>
-      </table>
+      <a-row v-for="(line, rindex) in portData" :key="rindex">
+        <draggable v-model="portData[rindex]" :group="{ name: 'panel', pull: true, put: true }" @end="onMove" item-key="id" :id="rindex" class="row">
+          <template #item="{ element: port }">
+            <td> <elem :data="{ id: port.id, row: rindex }" @dbclick="onDbClick" /> </td>
+          </template>
+        </draggable>
+      </a-row>
     </a-col>
     <a-col :span="8">
       <draggable v-model="eleData" :group="{ name: 'element', pull: 'clone', put: false }" :sort="false" @end="onClone" item-key="id" style="display: flex; flex-flow: wrap">
@@ -90,14 +86,10 @@
   onMounted(() => init_data());
 </script>
 <style scoped>
-  .row,
-  tr,
-  tbody,
-  table {
+  .row {
     width: 100%;
-  }
-  table {
-    table-layout: fixed;
+    display: flex;
+    margin-bottom: 10px;
   }
   .dropzone {
     border: 1px dotted red;
